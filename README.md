@@ -4,6 +4,25 @@
 
 <img width="1429" alt="Screen Shot 2022-03-29 at 15 38 55" src="https://user-images.githubusercontent.com/91087641/160637409-f62026c7-5ec4-4fe3-bfe0-f2f056ec430e.png">
 
+## Table of Contents
+
+- [Brief](#brief)
+- [Deployment](#deployment)
+- [Team](#team)
+- [Concept](#concept)
+- [Installation](#installation)
+- [Technologies Used](#technologies-used)
+- [Process](#process)
+- [Planning](#planning)
+- [Creating the Backend with Express and MongoDB](#creating-the-backend-with-express-and-mongodb)
+- [Creating the Frontend with React](#creating-the-frontend-with-react)
+- [Project Walkthough](#project-walkthrough)
+- [Challenges and Wins](#challenges-and-wins)
+- [Future Improvements](#future-improvements)
+- [Key Learnings](#key-learnings)
+- [Contact](#contact)
+
+
 ## Brief 
 
 Build a **full stack** application by creating your own **backend** and **frontend**.
@@ -202,24 +221,105 @@ Placing both of these filters before the `map` allowed both filters to be applie
 
 #### TeachersProfile
 
-We used the `id` of each teacher on the teacher list page , to create a `teacherID` which then used with `useParams` created links to the `TeachersProfile` component. If a user clicks to view the profile of an individual teacher, they are redirected to a page with detailed information about that teacher. This is then used to return specific information related to each teacher.
+We used the `id` of each teacher on the teacher list page , to create a `teacherID` which then used with `useParams` created links to the `TeachersProfile` component. If a user clicks to view the profile of an individual teacher, they are redirected to a page with detailed information about that teacher. 
 
+This is then used to return specific information related to each teacher. However if the user is not registered or logged in they are instead prompted to login.
 
+Reviews added about the teacher also appear on the individual teacher page by using a `map` in the return. Users can add their own reviews by using a form which sends a `POST` request `onSubmit`. If the user created the review a button appears where they can also delete that review. This by implementing a `userIsOwner` function which checks the `payload`.
 
+If the Teacher was added by the user they can also edit and delete the page itself with buttons becoming available with `Put` and `Delete` requests `onClick`.
+
+![Screen Shot 2022-03-29 at 22 07 49](https://user-images.githubusercontent.com/91087641/160707654-00502c74-f893-497f-a009-9782c1926698.png)
+
+![Screen Shot 2022-03-29 at 22 08 31](https://user-images.githubusercontent.com/91087641/160707683-06652c28-4102-452d-974b-6a889b2b9263.png)
+
+![Screen Shot 2022-03-29 at 22 09 16](https://user-images.githubusercontent.com/91087641/160707709-9d9c8b3a-2a43-4314-9c99-71e32c5cf0ad.png)
+
+<img width="1409" alt="Screen Shot 2022-03-29 at 21 58 19" src="https://user-images.githubusercontent.com/91087641/160707736-c87f7214-6053-4294-9fe0-e2922693dd76.png">
+
+<img width="1405" alt="Screen Shot 2022-03-29 at 21 58 29" src="https://user-images.githubusercontent.com/91087641/160707767-957a000d-aaed-41a3-b530-46fe9951e32c.png">
+
+#### AddTeacher and using Cloudinary
+
+When a user is logged in an option to "become a teacher" appears in the nav bar. This button redirects the user to component containing a form where they can upload themselves as a teacher by submitting a `Post` request to the API. 
+
+The form itself was built in another `TeacherForm` component to and then imported into `AddTeacher` page to streamline the process. Another `ImageUpload` component was then made with a `Post` request to `Cloudinary` which was then imported into the `TeacherForm`. 
+
+This three stage process when combined togther allowed users to upload images of themselves when creating a teacher, which can then be acessed from the get requests in the other pages. 
+
+* AddTeacher
+
+![Screen Shot 2022-03-29 at 22 21 57](https://user-images.githubusercontent.com/91087641/160709653-eb71cec3-e217-42d5-9ea0-4df6c8d97b06.png)
+
+* TeacherForm
+
+![Screen Shot 2022-03-29 at 22 20 50](https://user-images.githubusercontent.com/91087641/160709601-5af84f2d-1ba1-441a-81a7-8173be1166ce.png)
+
+* ImageUpload
+
+![Screen Shot 2022-03-29 at 22 20 31](https://user-images.githubusercontent.com/91087641/160709572-cbb7a10e-1adb-4794-a31f-075f75938073.png)
 
 #### Styling
 
+This was the first project in which I worked with the `Boostrap`. `Boostrap` made styling the CSS and positioning HTML elements much considerbly easier and smoother across the site and achive the "clean" look we wished for the site.
+
+Another aspect in which Bootstrap proved very effective was in helping make the platform fully repsonsive to different screen sizes, especially mobile. While we all still had to spend a certain ammount of time using `SCSS` and setting `media queries` to adjuct the project to different sizes. 
+
+We were also very happy with how smooth we made the `UX` for the interface overall, keeping this heavily in mind when styling each page.
+
 #### Project Walkthrough
+
+<img width="1416" alt="Screen Shot 2022-03-29 at 22 36 42" src="https://user-images.githubusercontent.com/91087641/160711678-73f15166-79ce-4b70-a396-7fbff3d240cf.png">
+
+<img width="709" alt="Screen Shot 2022-03-29 at 22 36 54" src="https://user-images.githubusercontent.com/91087641/160711706-0b89ca80-95ec-49b5-9b25-df4a5fc3726f.png">
+
+<img width="1438" alt="Screen Shot 2022-03-29 at 22 37 01" src="https://user-images.githubusercontent.com/91087641/160711735-d3db4d06-ad77-49b8-8bf6-2e06342b2861.png">
+
+<img width="1440" alt="Screen Shot 2022-03-29 at 22 37 12" src="https://user-images.githubusercontent.com/91087641/160711760-4049eb2e-280a-4c7e-a450-4dc7eaf2fcea.png">
+
+<img width="1418" alt="Screen Shot 2022-03-29 at 22 37 34" src="https://user-images.githubusercontent.com/91087641/160711791-249cf4ed-cca8-4bc6-9e93-239e9fd14cb1.png">
+
+<img width="1437" alt="Screen Shot 2022-03-29 at 22 37 52" src="https://user-images.githubusercontent.com/91087641/160711821-4c95d615-af68-42d6-b419-83d0172dd900.png">
+
+<img width="722" alt="Screen Shot 2022-03-29 at 22 38 01" src="https://user-images.githubusercontent.com/91087641/160711853-40fe4908-5402-4cc4-bb3e-78b9e58db087.png">
 
 ## Challenges and Wins
 
 #### Challenges
 
+This was my first time working with Git as a member of a team so it took some time getting used to checking out and merging feature branches, with four of us working on different parts of the frontend. Good communication and planning was key to avoid major merge conflicts and from around halfway through the project we were merging with little to no issues at all.
+
+As this was our first time builiding a back end database, there was a learning curve for us to get all the aspects of each model, route and controller working effectively. However doing this together as a team not only helped us solve and problems we encountered quickly but also really helped us to cement the fundamentals and also understand how express and MogoDB works.
+
 #### Wins
+
+Fool proof planning as part of a team. We did a great job at planning out the project and spending a significant amount of time in wireframimg as well planning what models we would use and where. Working as part of a four people team could have been more challenging, but we were well organised with daily standups in which we would discuss what features we are building on the day and how we will be working during the day.
+
+Going further with React and building more complex components. The scope of this project was much larger than anything we encoutered before, such as having multiple filters and requests in a single component, or a triple import of components to get the cloudinary images to work smoothly. This was our first Full Stack project and I feel like we all really rose to the occasion.
+
+Sylting an app that was fully responsive to different screen sizes and mobiles. Learning how to use Bootstrap helped with this considerable but we all put alot of thought and effort into the UX and learning how to use media queries to make everything responsive. Being able to use a Full Stack Application we've built on a mobiles is very statisfying.
+
 
 ## Future Improvements
 
+Include and Edit review button.
+
+Have a seperate form for booking a lesson for a teacher with a checkout page for payment as opposed to sending an email to the teacher. 
+
 ## Key Learnings
+
+This project conitinued to strongly cemented my knowledge of React, pushing myself to seek out documentation and become more confident in trying things I hadn't considered before. During this project React became one of my favourite systems to work with.
+
+MongoDB and working with NoSQL database for the first time. It was great to get to work building a first database and adapt the knowledge learned by building a MongoDB database.
+
+Planning effectively and working as a team. It has been a great experience working on a first team project. Learning how to organise the workflow and different tasks between group members really helped us out in this project.
+
+Bootstrap Framework. I really enjoyed working with Bootstrap which I learnt from scratch during this project. It was a great starting point in this project to get more comfortable with another framework and looking forward using it in future projects.
+
+Overall I was able to apply what I had learnt previously and also push myself to look up documentation and learn much more doing this project. 
+
+I'm proud of the work I have achieved and the end result we all got together. Even though there is always do more we could do we worked very well as a team and achived what we set out to do, create a fully functional and mobile responsive language platform.
+
 
 ## Contact
 
