@@ -14,6 +14,10 @@
 
 #### • [Ali Ali](https://github.com/alibeniaminali)
 
+#### • [Dougie Brown](https://github.com/Dougie-b)
+
+#### • [Elena Gicheva](https://github.com/ElenaGicheva)
+
 ## Concept
 
 ## Installation
