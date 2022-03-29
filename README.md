@@ -61,9 +61,9 @@ Esperanto is a platform to help people find and book language teachers across a 
 
 Users can also rate and review teachers as well as signing up to be a teacher themselves.
 
-As a team of developers ranging from diverse international backgrounds interested in langauges, we wished to create a langauge education platofor. We used an existing language site Italki as a template for which to form our ideas, however we wished to make an even "cleaner" version of this site visually.
+As a team of developers ranging from diverse international backgrounds interested in languages, we wished to create a language education platform. We used an existing language site Italki as a template for which to form our ideas, however we wished to make an even "cleaner" version of this site visually.
 
-Even the name of our app, the Esperanto, was inspired by the wish for international communication. We though this was a consistant and clear way to brand the purpose of our platform.
+Even the name of our app, the Esperanto, was inspired by the wish for international communication. We thought this was a consistent and clear way to brand the purpose of our platform.
 
 This is a full stack application built with Express, MongoDB and React. It was also my first experience creating a back end.
 
@@ -115,9 +115,9 @@ The whole application was built over 7 days in a team of four devs.
 
 ### Planning
 
-We have spent the first day deciding on an idea as well as planning our project thouroughly with building wireframes, alongside the models, schemas and axious requests required the project. 
+We have spent the first day deciding on an idea as well as planning our project thoroughly with building wireframes, alongside the models, schemas and axios requests required for the project.
 
-We then also made an Asana Board to track, short term and strech goals we should be working on each day for the project. Using Asana also helped us to designate who would be working on certain aspects of the project. 
+We then also made an Asana Board to track, short term and stretch goals we should be working on each day for the project. Using Asana also helped us to designate who would be working on certain aspects of the project.
 
 It considerably helped us to be organised, knowing exactly what features we were building and when helped make the overall process smoother.
 
@@ -134,19 +134,19 @@ It considerably helped us to be organised, knowing exactly what features we were
 
 ### Creating the Backend with Express and MongoDB
 
-We created our backend together so that there was no confusion about any models and databases, but also to reinforce our knowledge of concepts. This process went ver smoothly. After installing the necessary dependencies and setting up the basic middleware necessary to have a server running. We then began to build the different schemas for users, teachers and reviews.
+We created our backend together so that there was no confusion about any models and databases, but also to reinforce our knowledge of concepts. his process went very smoothly. After installing the necessary dependencies and setting up the basic middleware necessary to have a server running. We then began to build the different schemas for users, teachers and reviews.
 
 #### Models
 
 The Teacher Schema as well as containing a large range of fields, also contained an attached many to one Review model to implement the use of multiple reviews for each individual teacher. 
 
-We ensured to the display picture would be a string in order for us to convert the image url of uploaded images with `Cloudinary`.
+We ensured the display picture would be a string in order for us to convert the image url of uploaded images with `Cloudinary`.
 
 ![Screen Shot 2022-03-29 at 19 14 09](https://user-images.githubusercontent.com/91087641/160678792-2df70332-0a8a-4233-abd3-17fdb9d1763b.png)
 
-The User `Schema` comprised of basic login details, username, email, password and confirmation. 
+The User `Schema` consisted of basic login details, username, email, password and confirmation. 
 
-We also have a `virtual field` of owned "teachers" that the user creates on the site, this would allow for permissions checks for editing and deleting the page they have made for themselves when they have added themselves as a teacher. 
+We also have a `virtual field` of owned "teachers" that the user creates on the site, this would allow for permission checks for editing and deleting the page they have made for themselves when they have added themselves as a teacher. 
 
 We also used `bcrypt` to hash passwords that a user has made to login.
 
@@ -166,7 +166,7 @@ We used `JsonWebToken` to create a controller which would check if the user was 
 
 We created each api request and the endpoints needed for the project and which controller request types `GET`, `PUT`, `POST`, `DELETE` should be assigned to each of them.
 
-The last thing we had to do was to add middleware and decide which routes didn't require authentication and which routes required a `secureRoute` to gives permission to certain endpoints so that users can only edit/delete reviews or change the teacher they have created themselves.
+The last thing we had to do was to add middleware and decide which routes didn't require authentication and which routes required a `secureRoute` to give permission to certain endpoints so that users can only edit/delete reviews or change the teacher they have created themselves.
 
 ![Screen Shot 2022-03-29 at 20 08 23](https://user-images.githubusercontent.com/91087641/160688371-1e184f86-8109-469a-a542-1e74cca62a28.png)
 
@@ -183,15 +183,16 @@ We double-checked all our routes while creating them using `Insomnia`, ensuring 
 
 We created a React app and connected to the database. We then created all the components that we were planning to use and connected them using the React Router DOM together. 
 
-After this point we then indiviually focused on specific compnents individually to create the elements that would make up each individual component. 
+After this point we then individually focused on specific components individually to create the elements that would make up each individual component. 
 
 However everyone contributed to parts of each component still, helping each other out with aspects they had greater expertise in.
 
 #### Home
 
-Alongiside displaying information about the website, we created a 'state' of langauges in conjucntion with a `Get` request to create a `useEffect` for a `countLangauges` function. 
+Alongside displaying information about the website, we created a 'state' of languages in conjunction with a `Get` request to create a `useEffect` for a `countLangauges` function.
 
-This meant that the number of langauges displayed on the home page would dynamically update with each brand new langauge taught by a teacher would added to the database. 
+This meant that the number of languages displayed on the home page would dynamically update with each brand new language taught by a teacher added to the database.
+
 
 ![Screen Shot 2022-03-29 at 20 22 24](https://user-images.githubusercontent.com/91087641/160691504-ba939765-1362-435f-87f2-7bd569b63394.png)
 
@@ -205,9 +206,9 @@ Calling the `length` of the teachers array allows the numbers of teachers availa
 
 * Filtering
 
-A `useState` of `searchTerm` alongside a text form targeting what users typed as a search term for langauge taught was used to create a function to filter out results for the map.
+A `useState` of `searchTerm` alongside a text form targeting what users typed as a search term for language taught was used to create a function to filter out results for the map.
 
-This was used alongside another filter a `select` form attached to an `handleChange` event listener which updated the teaches filtered from the array in accordance to the `pricePerHour` value.
+This was used alongside another filter, a `select` form attached to an `handleChange` event listener which updated the teachers filtered from the array in accordance to the `pricePerHour` value.
 
 Placing both of these filters before the `map` allowed both filters to be applied to the teachers the mapped in the return.
 
@@ -221,7 +222,7 @@ Placing both of these filters before the `map` allowed both filters to be applie
 
 #### TeachersProfile
 
-We used the `id` of each teacher on the teacher list page , to create a `teacherID` which then used with `useParams` created links to the `TeachersProfile` component. If a user clicks to view the profile of an individual teacher, they are redirected to a page with detailed information about that teacher. 
+We used the `id` of each teacher on the teacher list page , to create a `teacherID` which then when used with `useParams`, created links to the `TeachersProfile` component. If a user clicks to view the profile of an individual teacher, they are redirected to a page with detailed information about that teacher. 
 
 This is then used to return specific information related to each teacher. However if the user is not registered or logged in they are instead prompted to login.
 
@@ -241,9 +242,9 @@ If the Teacher was added by the user they can also edit and delete the page itse
 
 #### AddTeacher and using Cloudinary
 
-When a user is logged in an option to "become a teacher" appears in the nav bar. This button redirects the user to component containing a form where they can upload themselves as a teacher by submitting a `Post` request to the API. 
+When a user is logged in an option to "become a teacher" appears in the nav bar. This button redirects the user to a component containing a form where they can upload themselves as a teacher by submitting a `Post` request to the API. 
 
-The form itself was built in another `TeacherForm` component to and then imported into `AddTeacher` page to streamline the process. Another `ImageUpload` component was then made with a `Post` request to `Cloudinary` which was then imported into the `TeacherForm`. 
+The form itself was built in another `TeacherForm` component and then imported into the `AddTeacher` page to streamline the process. Another `ImageUpload` component was then made with a `Post` request to `Cloudinary` which was then imported into the `TeacherForm`. 
 
 This three stage process when combined togther allowed users to upload images of themselves when creating a teacher, which can then be acessed from the get requests in the other pages. 
 
@@ -261,9 +262,9 @@ This three stage process when combined togther allowed users to upload images of
 
 #### Styling
 
-This was the first project in which I worked with the `Boostrap`. `Boostrap` made styling the CSS and positioning HTML elements much considerbly easier and smoother across the site and achive the "clean" look we wished for the site.
+This was the first project in which I worked with the `Boosttrap`. `Bootstrap` made styling the CSS and positioning HTML elements much considerably easier and smoother across the site and achieve the "clean" look we wished for the site.
 
-Another aspect in which Bootstrap proved very effective was in helping make the platform fully repsonsive to different screen sizes, especially mobile. While we all still had to spend a certain ammount of time using `SCSS` and setting `media queries` to adjuct the project to different sizes. 
+Another aspect in which Bootstrap proved very effective was in helping make the platform fully responsive to different screen sizes, especially mobile. While we all still had to spend a certain amount of time using `SCSS` and setting `media queries` to adjust the project to different sizes. 
 
 We were also very happy with how smooth we made the `UX` for the interface overall, keeping this heavily in mind when styling each page.
 
@@ -289,16 +290,15 @@ We were also very happy with how smooth we made the `UX` for the interface overa
 
 This was my first time working with Git as a member of a team so it took some time getting used to checking out and merging feature branches, with four of us working on different parts of the frontend. Good communication and planning was key to avoid major merge conflicts and from around halfway through the project we were merging with little to no issues at all.
 
-As this was our first time builiding a back end database, there was a learning curve for us to get all the aspects of each model, route and controller working effectively. However doing this together as a team not only helped us solve and problems we encountered quickly but also really helped us to cement the fundamentals and also understand how express and MogoDB works.
+As this was our first time building a back end database, there was a learning curve for us to get all the aspects of each model, route and controller working effectively. However, doing this together as a team not only helped us solve problems we encountered quickly but also really helped us to cement the fundamentals and also understand how express and MongoDB works.
 
 #### Wins
 
-Fool proof planning as part of a team. We did a great job at planning out the project and spending a significant amount of time in wireframimg as well planning what models we would use and where. Working as part of a four people team could have been more challenging, but we were well organised with daily standups in which we would discuss what features we are building on the day and how we will be working during the day.
+Fool proof planning as part of a team. We did a great job at planning out the project and spending a significant amount of time in wireframing as well planning what models we would use and where. Working as part of a four person team could have been more challenging, but we were well organised with daily standups in which we would discuss what features we are building on the day and how we will be working during the day.
 
-Going further with React and building more complex components. The scope of this project was much larger than anything we encoutered before, such as having multiple filters and requests in a single component, or a triple import of components to get the cloudinary images to work smoothly. This was our first Full Stack project and I feel like we all really rose to the occasion.
+Going further with React and building more complex components. The scope of this project was much larger than anything we encountered before, such as having multiple filters and requests in a single component, or a triple import of components to get the cloudinary images to work smoothly. This was our first Full Stack project and I feel like we all really rose to the occasion.
 
-Sylting an app that was fully responsive to different screen sizes and mobiles. Learning how to use Bootstrap helped with this considerable but we all put alot of thought and effort into the UX and learning how to use media queries to make everything responsive. Being able to use a Full Stack Application we've built on a mobiles is very statisfying.
-
+Styling an app that was fully responsive to different screen sizes and mobiles. Learning how to use Bootstrap helped with this considerably but we all put a lot of thought and effort into the UX and learning how to use media queries to make everything responsive. Being able to use a Full Stack Application we've built on a mobile is very satisfying.
 
 ## Future Improvements
 
@@ -308,18 +308,17 @@ Have a seperate form for booking a lesson for a teacher with a checkout page for
 
 ## Key Learnings
 
-This project conitinued to strongly cemented my knowledge of React, pushing myself to seek out documentation and become more confident in trying things I hadn't considered before. During this project React became one of my favourite systems to work with.
+This project continued to strongly cement my knowledge of React, pushing myself to seek out documentation and become more confident in trying things I hadn't considered before. During this project React became one of my favourite systems to work with.
 
-MongoDB and working with NoSQL database for the first time. It was great to get to work building a first database and adapt the knowledge learned by building a MongoDB database.
+MongoDB and working with NoSQL databases for the first time. It was great to get to work building a first database and adapt the knowledge learned by building a MongoDB database.
 
 Planning effectively and working as a team. It has been a great experience working on a first team project. Learning how to organise the workflow and different tasks between group members really helped us out in this project.
 
-Bootstrap Framework. I really enjoyed working with Bootstrap which I learnt from scratch during this project. It was a great starting point in this project to get more comfortable with another framework and looking forward using it in future projects.
+Bootstrap Framework. I really enjoyed working with Bootstrap which I learnt from scratch during this project. It was a great starting point in this project to get more comfortable with another framework and looking forward to using it in future projects.
 
-Overall I was able to apply what I had learnt previously and also push myself to look up documentation and learn much more doing this project. 
+Overall I was able to apply what I had learnt previously and also push myself to look up documentation and learn much more doing this project.
 
-I'm proud of the work I have achieved and the end result we all got together. Even though there is always do more we could do we worked very well as a team and achived what we set out to do, create a fully functional and mobile responsive language platform.
-
+I'm proud of the work I have achieved and the end result we all got together. Even though there is always more we could do, we worked very well as a team and achieved what we set out to do, creating a fully functional and mobile responsive language platform.
 
 ## Contact
 
