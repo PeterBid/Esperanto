@@ -16,7 +16,7 @@
 - [Planning](#planning)
 - [Creating the Backend with Express and MongoDB](#creating-the-backend-with-express-and-mongodb)
 - [Creating the Frontend with React](#creating-the-frontend-with-react)
-- [Project Walkthough](#project-walkthrough)
+- [Project Walkthrough](#project-walkthrough)
 - [Challenges and Wins](#challenges-and-wins)
 - [Future Improvements](#future-improvements)
 - [Key Learnings](#key-learnings)
@@ -210,7 +210,7 @@ A `useState` of `searchTerm` alongside a text form targeting what users typed as
 
 This was used alongside another filter, a `select` form attached to an `handleChange` event listener which updated the teachers filtered from the array in accordance to the `pricePerHour` value.
 
-Placing both of these filters before the `map` allowed both filters to be applied to the teachers the mapped in the return.
+Placing both of these filters before the `map` allowed both filters to be applied to the teachers mapped in the return.
 
 ![Screen Shot 2022-03-29 at 20 45 15](https://user-images.githubusercontent.com/91087641/160694905-fbdff330-aa2f-4f20-ab4d-2b15805c3152.png)
 
@@ -246,7 +246,7 @@ When a user is logged in an option to "become a teacher" appears in the nav bar.
 
 The form itself was built in another `TeacherForm` component and then imported into the `AddTeacher` page to streamline the process. Another `ImageUpload` component was then made with a `Post` request to `Cloudinary` which was then imported into the `TeacherForm`. 
 
-This three stage process when combined togther allowed users to upload images of themselves when creating a teacher, which can then be acessed from the get requests in the other pages. 
+This three stage process when combined together allowed users to upload images of themselves when creating a teacher, which can then be accessed from the get requests in the other pages. 
 
 * AddTeacher
 
@@ -262,7 +262,7 @@ This three stage process when combined togther allowed users to upload images of
 
 #### Styling
 
-This was the first project in which I worked with the `Boosttrap`. `Bootstrap` made styling the CSS and positioning HTML elements much considerably easier and smoother across the site and achieve the "clean" look we wished for the site.
+This was the first project in which I worked with the `Boosttrap`. `Bootstrap` made styling the CSS and positioning HTML elements much considerably easier and smoother across the site and achieved the "clean" look we wished for the site.
 
 Another aspect in which Bootstrap proved very effective was in helping make the platform fully responsive to different screen sizes, especially mobile. While we all still had to spend a certain amount of time using `SCSS` and setting `media queries` to adjust the project to different sizes. 
 
@@ -302,9 +302,9 @@ Styling an app that was fully responsive to different screen sizes and mobiles. 
 
 ## Future Improvements
 
-Include and Edit review button.
+* Include and Edit review button.
 
-Have a seperate form for booking a lesson for a teacher with a checkout page for payment as opposed to sending an email to the teacher. 
+* Have a seperate form for booking a lesson for a teacher with a checkout page for payment as opposed to sending an email to the teacher. 
 
 ## Key Learnings
 
